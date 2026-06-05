@@ -91,42 +91,51 @@ const GlobalStats = () => {
   ];
 
   return (
-    <section className="relative w-full bg-black text-white px-4 pt-0 pb-20 overflow-hidden select-none flex flex-col items-center">
-      {/* Container holding the heading & background earth element */}
-      <div className="relative w-full max-w-5xl mx-auto flex flex-col items-center justify-end min-h-[320px] mb-6 text-center z-10 px-4">
-        {/* Placeholder for your Earth Image Asset */}
-        {/* Replace standard <img> source with your path / Next.js Image component */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[140%] sm:w-[110%] md:w-full max-w-[900px] aspect-[2/1] pointer-events-none mix-blend-screen opacity-90">
-          <Image src={global} alt="Global Network" className="w-full h-full object-cover" />
-          {/* Subtle blue ambient aura layer mirroring image backdrops */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(99,102,241,0.25)_0%,transparent_60%)] -z-10" />
+    <section className="relative w-full bg-black text-white overflow-hidden select-none">
+      {/* Full-width Globe + Text Container */}
+      <div className="relative w-full min-h-[460px] md:min-h-[520px] flex items-center justify-center">
+        {/* Globe - Now Full Width */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="relative w-full max-w-[1400px] aspect-[16/9] md:aspect-[2/1]">
+            <Image
+              src={global}
+              alt="Global Network"
+              className="w-full h-full object-cover mix-blend-screen opacity-90 scale-105"
+              priority
+              fill
+              sizes="100vw"
+            />
+
+            {/* Enhanced Blue Glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(99,102,241,0.4)_0%,transparent_65%)]" />
+          </div>
         </div>
 
-        {/* Section Typography Content */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-normal text-zinc-300 leading-snug tracking-wide max-w-2xl relative z-20 mb-2 mt-10">
-          Assisting over <span className="font-semibold text-white">15,000 job seekers</span> <br />
-          find their dream positions.
-        </h2>
+        {/* Text - Perfectly Centered on Globe */}
+        <div className="relative z-10 text-center px-2 max-w-3xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal text-zinc-200 leading-tight tracking-wide">
+            Assisting over <span className="font-semibold text-white">15,000 job seekers</span>
+            <br />
+            find their dream positions.
+          </h2>
+        </div>
       </div>
 
-      {/* Grid containing the 4 stat metric metric cards */}
-      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 z-20 relative pt-10 px-2">
+      {/* Stats - Tightly placed under the globe */}
+      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 -mt-12 md:-mt-16 px-4 relative z-20 pb-20">
         {stats.map((stat) => (
           <div
             key={stat.id}
-            className="card bg-[#0b0b0c] border border-zinc-900/60 p-6 rounded-xl flex flex-col items-start justify-between min-h-[165px] shadow-[2xl] hover:border-zinc-800 transition-colors duration-200"
+            className="bg-[#0b0b0c] border border-zinc-900/60 p-6 rounded-2xl flex flex-col items-start justify-between min-h-[165px] shadow-2xl hover:border-zinc-700 transition-all duration-200"
           >
-            {/* Top Row: Functional Vector Icon Component */}
-            <div className="p-2 bg-zinc-900/40 rounded-lg border border-zinc-800/40 shrink-0 mb-3">
+            <div className="p-2.5 bg-zinc-900/40 rounded-xl border border-zinc-800/40 shrink-0 mb-4">
               {stat.icon}
             </div>
-
-            {/* Bottom Stack Layout: Main Metric & Label Text */}
-            <div className="space-y-1 w-full">
-              <span className="block text-3xl sm:text-4xl font-semibold tracking-tight text-white font-sans">
+            <div className="space-y-1">
+              <span className="block text-4xl sm:text-5xl font-semibold tracking-tighter text-white">
                 {stat.value}
               </span>
-              <span className="block text-xs font-medium text-zinc-500 tracking-wide">
+              <span className="block text-sm font-medium text-zinc-500 tracking-wider">
                 {stat.label}
               </span>
             </div>
