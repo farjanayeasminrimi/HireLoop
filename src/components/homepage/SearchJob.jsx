@@ -3,7 +3,6 @@ import React from "react";
 const SearchJob = () => {
   return (
     <section className="relative min-h-[75vh] w-full flex flex-col items-center justify-center bg-black text-white px-4 py-16 overflow-hidden select-none">
-      {/* Background Ambient Radial Glow matching image_21c000.png */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.06)_0%,transparent_65%)] pointer-events-none" />
 
       {/* 1. Pill Badge - Bold & Clear */}
@@ -50,7 +49,6 @@ const SearchJob = () => {
             />
           </div>
 
-          {/* Exact Red-Box Highlight Divider from image_21c000.png */}
           <div className="hidden sm:block h-7 w-[1px] bg-zinc-800/80 shrink-0 mx-2" />
 
           {/* Individual Input 2: Location or Remote */}
