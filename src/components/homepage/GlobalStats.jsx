@@ -92,9 +92,7 @@ const GlobalStats = () => {
 
   return (
     <section className="relative w-full bg-black text-white overflow-hidden select-none">
-      {/* Full-width Globe + Text Container */}
       <div className="relative w-full min-h-[460px] md:min-h-[520px] flex items-center justify-center">
-        {/* Globe - Now Full Width */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="relative w-full max-w-[1400px] aspect-[16/9] md:aspect-[2/1]">
             <Image
@@ -106,7 +104,7 @@ const GlobalStats = () => {
               sizes="100vw"
             />
 
-            {/* Enhanced Blue Glow */}
+            {/* Blue Glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(99,102,241,0.4)_0%,transparent_65%)]" />
           </div>
         </div>
@@ -121,7 +119,7 @@ const GlobalStats = () => {
         </div>
       </div>
 
-      {/* Stats - Tightly placed under the globe */}
+      {/* Stats */}
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 -mt-12 md:-mt-16 px-4 relative z-20 pb-20">
         {stats.map((stat) => (
           <div
