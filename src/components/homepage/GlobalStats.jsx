@@ -92,7 +92,7 @@ const GlobalStats = () => {
 
   return (
     <section className="relative w-full bg-black text-white overflow-hidden select-none">
-      <div className="relative w-full min-h-[460px] md:min-h-[520px] flex items-center justify-center">
+      <div className="relative w-full min-h-[460px] md:min-h-[480px] flex items-center justify-center">
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="relative w-full max-w-[1400px] aspect-[16/9] md:aspect-[2/1]">
             <Image
@@ -111,7 +111,7 @@ const GlobalStats = () => {
 
         {/* Text - Perfectly Centered on Globe */}
         <div className="relative z-10 text-center px-2 max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal text-zinc-200 leading-tight tracking-wide">
+          <h2 className="text-3xl sm:text-4xl md:text-[2.7rem] mt-28 font-normal text-zinc-200 leading-tight tracking-wide">
             Assisting over <span className="font-semibold text-white">15,000 job seekers</span>
             <br />
             find their dream positions.
